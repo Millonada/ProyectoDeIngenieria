@@ -37,6 +37,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.textTime = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.palabrasText = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button1
@@ -55,7 +57,7 @@
             this.textRes2.Multiline = true;
             this.textRes2.Name = "textRes2";
             this.textRes2.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textRes2.Size = new System.Drawing.Size(498, 388);
+            this.textRes2.Size = new System.Drawing.Size(249, 388);
             this.textRes2.TabIndex = 1;
             this.textRes2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textRes2.TextChanged += new System.EventHandler(this.textRes2_TextChanged);
@@ -106,27 +108,51 @@
             // 
             // textTime
             // 
-            this.textTime.Location = new System.Drawing.Point(756, 30);
+            this.textTime.Location = new System.Drawing.Point(499, 30);
             this.textTime.Multiline = true;
             this.textTime.Name = "textTime";
-            this.textTime.Size = new System.Drawing.Size(474, 386);
+            this.textTime.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textTime.Size = new System.Drawing.Size(226, 386);
             this.textTime.TabIndex = 7;
+            this.textTime.TextChanged += new System.EventHandler(this.textTime_TextChanged);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(756, 9);
+            this.label3.Location = new System.Drawing.Point(499, 9);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(55, 15);
             this.label3.TabIndex = 8;
             this.label3.Text = "Tiempos:";
+            // 
+            // palabrasText
+            // 
+            this.palabrasText.Location = new System.Drawing.Point(747, 30);
+            this.palabrasText.Multiline = true;
+            this.palabrasText.Name = "palabrasText";
+            this.palabrasText.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.palabrasText.Size = new System.Drawing.Size(226, 386);
+            this.palabrasText.TabIndex = 7;
+            this.palabrasText.TextChanged += new System.EventHandler(this.textTime_TextChanged);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(747, 9);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(51, 15);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "Palabras";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1250, 450);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
+            this.Controls.Add(this.palabrasText);
             this.Controls.Add(this.textTime);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textTotalTiempo);
@@ -154,5 +180,7 @@
         private Label label2;
         private TextBox textTime;
         private Label label3;
+        private TextBox palabrasText;
+        private Label label4;
     }
 }
