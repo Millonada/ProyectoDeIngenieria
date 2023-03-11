@@ -29,16 +29,16 @@
         private void InitializeComponent()
         {
             this.button1 = new System.Windows.Forms.Button();
-            this.textRes2 = new System.Windows.Forms.TextBox();
             this.totalFiles = new System.Windows.Forms.Label();
             this.textTotalFiles = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.textTotalTiempo = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.palabrasText = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.textTime = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textRes2 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // button1
@@ -50,17 +50,6 @@
             this.button1.Text = "Iniciar";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // textRes2
-            // 
-            this.textRes2.Location = new System.Drawing.Point(235, 28);
-            this.textRes2.Multiline = true;
-            this.textRes2.Name = "textRes2";
-            this.textRes2.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textRes2.Size = new System.Drawing.Size(249, 388);
-            this.textRes2.TabIndex = 1;
-            this.textRes2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textRes2.TextChanged += new System.EventHandler(this.textRes2_TextChanged);
             // 
             // totalFiles
             // 
@@ -95,16 +84,6 @@
             this.textTotalTiempo.Name = "textTotalTiempo";
             this.textTotalTiempo.Size = new System.Drawing.Size(76, 23);
             this.textTotalTiempo.TabIndex = 5;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(235, 9);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(102, 15);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "Archivos sin html:";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label3
             // 
@@ -145,6 +124,27 @@
             this.textTime.TabIndex = 7;
             this.textTime.TextChanged += new System.EventHandler(this.textTime_TextChanged);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(235, 9);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(105, 15);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "Palabras Repetidas";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
+            // 
+            // textRes2
+            // 
+            this.textRes2.Location = new System.Drawing.Point(235, 28);
+            this.textRes2.Multiline = true;
+            this.textRes2.Name = "textRes2";
+            this.textRes2.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textRes2.Size = new System.Drawing.Size(249, 388);
+            this.textRes2.TabIndex = 1;
+            this.textRes2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textRes2.TextChanged += new System.EventHandler(this.textRes2_TextChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -172,15 +172,15 @@
         #endregion
 
         private Button button1;
-        private TextBox textRes2;
         private Label totalFiles;
         private TextBox textTotalFiles;
         private Label label1;
         private TextBox textTotalTiempo;
-        private Label label2;
         private Label label3;
         private TextBox palabrasText;
         private Label label4;
         private TextBox textTime;
+        private Label label2;
+        private TextBox textRes2;
     }
 }

@@ -40,7 +40,7 @@ namespace actividad1._1
 
             }
             textTime.Text = cadena.ToString();
-            textRes2.Text = resultado.ToString();
+            textRes2.Text = contarPalabras();
             textTotalTiempo.Text = totalTiempo.ToString();
             textTotalFiles.Text = totalFiles.ToString();
 
@@ -107,6 +107,20 @@ namespace actividad1._1
             return res;
         }
 
+        private string contarPalabras() {
+            string res = "";
+            var conexion = new MySqlConnection(connection());
+            conexion.Open();
+            string Query = "SELECT palabra, COUNT(*) AS repeticiones FROM palabras GROUP BY palabra HAVING COUNT(*) > 1;";
+            var comando = new MySqlCommand(Query, conexion);
+            var datos = comando.ExecuteReader();
+            while (datos.Read())
+            {
+
+                res += datos.GetString(0) +" = "+ datos.GetInt16(1)+ "\r\n";
+            }
+            return res;
+        }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
