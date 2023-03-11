@@ -132,7 +132,7 @@ namespace actividad1._1
             while (datos.Read())
             {
 
-                res += "c:Files02.html  " + " Palabras = " + datos.GetString(1) + " Conteo = " + datos.GetInt16(2) + "\r\n";
+                res +=  datos.GetString(0) + " Palabras = " + datos.GetString(1) + " Conteo = " + datos.GetInt16(2) + "\r\n";
             
             }
             return res;
