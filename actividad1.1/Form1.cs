@@ -49,7 +49,7 @@ namespace actividad1._1
 
 
 
-            palabrasText.Text = mostrarPalabras();
+            palabrasText.Text = contarPalabrasByFile();
             
 
         }
@@ -118,6 +118,22 @@ namespace actividad1._1
             {
 
                 res += datos.GetString(0) +" = "+ datos.GetInt16(1)+ "\r\n";
+            }
+            return res;
+        }
+        private string contarPalabrasByFile()
+        {
+            string res = "";
+            var conexion = new MySqlConnection(connection());
+            conexion.Open();
+            string Query = "SELECT archivo, palabra, COUNT(*) AS repeticiones FROM palabras GROUP BY archivo, palabra HAVING COUNT(*) > 1;";
+            var comando = new MySqlCommand(Query, conexion);
+            var datos = comando.ExecuteReader();
+            while (datos.Read())
+            {
+
+                res += "c:Files02.html  " + " Palabras = " + datos.GetString(1) + " Conteo = " + datos.GetInt16(2) + "\r\n";
+            
             }
             return res;
         }

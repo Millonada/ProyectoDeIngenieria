@@ -100,7 +100,7 @@
             this.palabrasText.Multiline = true;
             this.palabrasText.Name = "palabrasText";
             this.palabrasText.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.palabrasText.Size = new System.Drawing.Size(226, 386);
+            this.palabrasText.Size = new System.Drawing.Size(491, 386);
             this.palabrasText.TabIndex = 7;
             this.palabrasText.TextChanged += new System.EventHandler(this.textTime_TextChanged);
             // 
@@ -109,9 +109,9 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(747, 9);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(51, 15);
+            this.label4.Size = new System.Drawing.Size(168, 15);
             this.label4.TabIndex = 8;
-            this.label4.Text = "Palabras";
+            this.label4.Text = "Palabras Repetidas Por archivo";
             this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // textTime
