@@ -86,9 +86,9 @@ namespace actividad1._1
         }
         private void separarPalabras(string texto,string archivo) {
             string[] words = texto.Split(' ');
-            foreach (string word in words) { 
-            insert(word, archivo);
-            }
+            //foreach (string word in words) { 
+            //insert(word, archivo);
+           // }
         }
 
         private string mostrarPalabras()

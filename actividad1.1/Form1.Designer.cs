@@ -35,10 +35,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.textTotalTiempo = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textTime = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.palabrasText = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.textTime = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // button1
@@ -106,16 +106,6 @@
             this.label2.Text = "Archivos sin html:";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
-            // textTime
-            // 
-            this.textTime.Location = new System.Drawing.Point(499, 30);
-            this.textTime.Multiline = true;
-            this.textTime.Name = "textTime";
-            this.textTime.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textTime.Size = new System.Drawing.Size(226, 386);
-            this.textTime.TabIndex = 7;
-            this.textTime.TextChanged += new System.EventHandler(this.textTime_TextChanged);
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -144,6 +134,16 @@
             this.label4.TabIndex = 8;
             this.label4.Text = "Palabras";
             this.label4.Click += new System.EventHandler(this.label4_Click);
+            // 
+            // textTime
+            // 
+            this.textTime.Location = new System.Drawing.Point(499, 30);
+            this.textTime.Multiline = true;
+            this.textTime.Name = "textTime";
+            this.textTime.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textTime.Size = new System.Drawing.Size(226, 386);
+            this.textTime.TabIndex = 7;
+            this.textTime.TextChanged += new System.EventHandler(this.textTime_TextChanged);
             // 
             // Form1
             // 
@@ -178,9 +178,9 @@
         private Label label1;
         private TextBox textTotalTiempo;
         private Label label2;
-        private TextBox textTime;
         private Label label3;
         private TextBox palabrasText;
         private Label label4;
+        private TextBox textTime;
     }
 }
