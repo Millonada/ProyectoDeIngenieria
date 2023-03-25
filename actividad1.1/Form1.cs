@@ -142,8 +142,8 @@ namespace actividad1._1
                 
                 foreach (var innerKvp in kvp.Value)
                 {
-                    res += innerKvp.Key +" , "+ innerKvp.Value +"\n";
-                    
+                    res += innerKvp.Key + " , " + innerKvp.Value + " Peso Token = " + ((innerKvp.Value) * 100 / 2) + "\r\n";
+
                 }
             }
 
