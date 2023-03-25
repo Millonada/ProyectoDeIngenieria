@@ -37,6 +37,8 @@
             this.posting = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.textRes2 = new System.Windows.Forms.TextBox();
+            this.tiempoText = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button1
@@ -98,7 +100,7 @@
             this.posting.Multiline = true;
             this.posting.Name = "posting";
             this.posting.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.posting.Size = new System.Drawing.Size(538, 386);
+            this.posting.Size = new System.Drawing.Size(349, 386);
             this.posting.TabIndex = 7;
             this.posting.TextChanged += new System.EventHandler(this.textTime_TextChanged);
             // 
@@ -123,11 +125,31 @@
             this.textRes2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textRes2.TextChanged += new System.EventHandler(this.textRes2_TextChanged);
             // 
+            // tiempoText
+            // 
+            this.tiempoText.Location = new System.Drawing.Point(854, 34);
+            this.tiempoText.Multiline = true;
+            this.tiempoText.Name = "tiempoText";
+            this.tiempoText.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.tiempoText.Size = new System.Drawing.Size(194, 384);
+            this.tiempoText.TabIndex = 9;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(859, 13);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(47, 15);
+            this.label4.TabIndex = 10;
+            this.label4.Text = "Tiempo";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1064, 450);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.tiempoText);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.posting);
             this.Controls.Add(this.label2);
@@ -157,5 +179,7 @@
         private Label label2;
         private TextBox textRes2;
         private TextBox posting;
+        private TextBox tiempoText;
+        private Label label4;
     }
 }

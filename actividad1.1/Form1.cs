@@ -40,6 +40,7 @@ namespace actividad1._1
                 //separarPalabras(dom.DocumentNode.InnerText, file);
 
             }
+            tiempoText.Text = cadena.ToString();
          
             textTotalTiempo.Text = totalTiempo.ToString();
             textTotalFiles.Text = totalFiles.ToString();
@@ -80,17 +81,42 @@ namespace actividad1._1
 
         private string PostinGet()
         {
+            var dictionary = new Dictionary<string, Dictionary<string, int>>();
             string res = "";
             var conexion = new MySqlConnection(connection());
             conexion.Open();
             string Query = "SELECT archivo, palabra, COUNT(*) AS num_repeticiones FROM palabras GROUP BY archivo, palabra ORDER BY archivo, palabra;";
             var comando = new MySqlCommand(Query, conexion);
-            var datos = comando.ExecuteReader();
-            while (datos.Read())
-            {
+            var reader = comando.ExecuteReader();
 
-                res += datos.GetChar(0) + " = " + datos.GetInt16(2) + "\r\n";
+            while (reader.Read())
+            {
+                string archivo = reader.GetString("archivo");
+                string palabra = reader.GetString("palabra");
+                int num_repeticiones = reader.GetInt32("num_repeticiones");
+
+                // Si la palabra no existe en el diccionario, se crea una entrada vacía
+                if (!dictionary.ContainsKey(palabra))
+                {
+                    dictionary.Add(palabra, new Dictionary<string, int>());
+                }
+
+                // Agregar la entrada del archivo y el número de repeticiones
+                dictionary[palabra][palabra] = num_repeticiones;
             }
+
+            // Imprimir la hash table
+            foreach (var kvp in dictionary)
+            {
+                
+                foreach (var innerKvp in kvp.Value)
+                {
+                    res += innerKvp.Key +" , "+ innerKvp.Value +"\n";
+                    
+                }
+            }
+
+        
             return res;
         }
 
