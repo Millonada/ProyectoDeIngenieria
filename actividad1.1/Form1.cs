@@ -116,7 +116,7 @@ namespace actividad1._1
             string res = "";
             var conexion = new MySqlConnection(connection());
             conexion.Open();
-            string Query = "SELECT archivo, palabra, COUNT(*) AS num_repeticiones FROM palabras GROUP BY archivo, palabra ORDER BY archivo, palabra;";
+            string Query = "SELECT id,archivo, palabra, COUNT(*) AS num_repeticiones FROM palabras GROUP BY archivo, palabra ORDER BY archivo, palabra;";
             var comando = new MySqlCommand(Query, conexion);
             var reader = comando.ExecuteReader();
 
@@ -124,6 +124,8 @@ namespace actividad1._1
             {
                 string archivo = reader.GetString("archivo");
                 string palabra = reader.GetString("palabra");
+                
+                int id=reader.GetInt32("id");
                 int num_repeticiones = reader.GetInt32("num_repeticiones");
 
                 // Si la palabra no existe en el diccionario, se crea una entrada vacía
@@ -133,7 +135,7 @@ namespace actividad1._1
                 }
 
                 // Agregar la entrada del archivo y el número de repeticiones
-                dictionary[palabra][palabra] = num_repeticiones;
+                dictionary[palabra][id.ToString()] = num_repeticiones;
             }
 
             // Imprimir la hash table
