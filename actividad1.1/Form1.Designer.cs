@@ -39,6 +39,8 @@
             this.textRes2 = new System.Windows.Forms.TextBox();
             this.tiempoText = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.textDelete = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button1
@@ -143,11 +145,29 @@
             this.label4.TabIndex = 10;
             this.label4.Text = "Tiempo";
             // 
+            // textDelete
+            // 
+            this.textDelete.Location = new System.Drawing.Point(14, 395);
+            this.textDelete.Name = "textDelete";
+            this.textDelete.Size = new System.Drawing.Size(182, 23);
+            this.textDelete.TabIndex = 11;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(12, 367);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(178, 15);
+            this.label5.TabIndex = 12;
+            this.label5.Text = "Tiempo en que tarda en eliminar";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1064, 450);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.textDelete);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.tiempoText);
             this.Controls.Add(this.label3);
@@ -181,5 +201,7 @@
         private TextBox posting;
         private TextBox tiempoText;
         private Label label4;
+        private TextBox textDelete;
+        private Label label5;
     }
 }

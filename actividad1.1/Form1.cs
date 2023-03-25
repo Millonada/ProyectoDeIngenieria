@@ -1,10 +1,7 @@
 using System.Data;
 using System.Diagnostics;
-using System.Windows.Forms.VisualStyles;
-using System.Xml;
-using HtmlAgilityPack;
 using MySqlConnector;
-
+using Newtonsoft.Json;
 
 namespace actividad1._1
 {
@@ -48,10 +45,44 @@ namespace actividad1._1
             textRes2.Text = DiccionarioGet().ToString();
             posting.Text = PostinGet().ToString();
 
+            textDelete.Text = stopList();
 
             
             
 
+        }
+
+        private string stopList() {
+            Stopwatch watch = Stopwatch.StartNew();
+            var conexion = new MySqlConnection(connection());
+            conexion.Open();
+            string Query = "SELECT palabra, COUNT(DISTINCT archivo) AS num_archivos_repetidos FROM palabras GROUP BY palabra HAVING COUNT(*) > 1;";
+            var comando = new MySqlCommand(Query, conexion);
+            var datos = comando.ExecuteReader();
+
+
+            string list = "[\"Management,\", \"Medical\", \"Federal\"]";
+            List<string> palabrasJson = JsonConvert.DeserializeObject<List<string>>(list);
+
+            foreach (string palabraJson in palabrasJson) {
+                bool encontrado = false;
+                while (datos.Read())
+                {
+                    if (palabraJson == datos.GetString(0)) { 
+                    
+                        encontrado= true;
+                        string Query2 = "DELETE FROM palabras WHERE palabra ="+ datos.GetString(0);
+                        var comando2 = new MySqlCommand(Query, conexion);
+                        var datos2 = comando.ExecuteReader();
+                    }
+                 
+                }
+            }
+
+            string time = "";
+            watch.Stop();
+            time += watch.ElapsedMilliseconds;
+            return time;
         }
 
         private string connection() {
