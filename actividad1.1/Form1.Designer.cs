@@ -34,9 +34,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.textTotalTiempo = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.palabrasText = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textTime = new System.Windows.Forms.TextBox();
+            this.posting = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.textRes2 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
@@ -90,48 +88,28 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(499, 9);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(55, 15);
+            this.label3.Size = new System.Drawing.Size(47, 15);
             this.label3.TabIndex = 8;
-            this.label3.Text = "Tiempos:";
+            this.label3.Text = "Posting";
             // 
-            // palabrasText
+            // posting
             // 
-            this.palabrasText.Location = new System.Drawing.Point(747, 30);
-            this.palabrasText.Multiline = true;
-            this.palabrasText.Name = "palabrasText";
-            this.palabrasText.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.palabrasText.Size = new System.Drawing.Size(491, 386);
-            this.palabrasText.TabIndex = 7;
-            this.palabrasText.TextChanged += new System.EventHandler(this.textTime_TextChanged);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(747, 9);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(168, 15);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "Palabras Repetidas Por archivo";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
-            // 
-            // textTime
-            // 
-            this.textTime.Location = new System.Drawing.Point(499, 30);
-            this.textTime.Multiline = true;
-            this.textTime.Name = "textTime";
-            this.textTime.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textTime.Size = new System.Drawing.Size(226, 386);
-            this.textTime.TabIndex = 7;
-            this.textTime.TextChanged += new System.EventHandler(this.textTime_TextChanged);
+            this.posting.Location = new System.Drawing.Point(499, 30);
+            this.posting.Multiline = true;
+            this.posting.Name = "posting";
+            this.posting.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.posting.Size = new System.Drawing.Size(538, 386);
+            this.posting.TabIndex = 7;
+            this.posting.TextChanged += new System.EventHandler(this.textTime_TextChanged);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(235, 9);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(105, 15);
+            this.label2.Size = new System.Drawing.Size(67, 15);
             this.label2.TabIndex = 6;
-            this.label2.Text = "Palabras Repetidas";
+            this.label2.Text = "Diccionario";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // textRes2
@@ -149,11 +127,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1250, 450);
-            this.Controls.Add(this.label4);
+            this.ClientSize = new System.Drawing.Size(1064, 450);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.palabrasText);
-            this.Controls.Add(this.textTime);
+            this.Controls.Add(this.posting);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textTotalTiempo);
             this.Controls.Add(this.label1);
@@ -177,10 +153,9 @@
         private Label label1;
         private TextBox textTotalTiempo;
         private Label label3;
-        private TextBox palabrasText;
-        private Label label4;
         private TextBox textTime;
         private Label label2;
         private TextBox textRes2;
+        private TextBox posting;
     }
 }

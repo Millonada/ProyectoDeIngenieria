@@ -1,3 +1,4 @@
+using System.Data;
 using System.Diagnostics;
 using System.Windows.Forms.VisualStyles;
 using System.Xml;
@@ -39,17 +40,15 @@ namespace actividad1._1
                 //separarPalabras(dom.DocumentNode.InnerText, file);
 
             }
-            textTime.Text = cadena.ToString();
-            textRes2.Text = contarPalabras();
+         
             textTotalTiempo.Text = totalTiempo.ToString();
             textTotalFiles.Text = totalFiles.ToString();
 
+            textRes2.Text = DiccionarioGet().ToString();
+            posting.Text = PostinGet().ToString();
 
-            // parte para insertar datos de las palabras
 
-
-
-            palabrasText.Text = contarPalabrasByFile();
+            
             
 
         }
@@ -63,80 +62,42 @@ namespace actividad1._1
             return builder.ToString();
         }
 
-        private void insert(string palabra,string archivo) {
 
-
+        private string DiccionarioGet() {
+            string res = "";
             var conexion = new MySqlConnection(connection());
             conexion.Open();
-            string Query = "INSERT INTO palabras (palabra,archivo) values ('" + palabra + "','" + archivo + "')";
+            string Query = "SELECT palabra, COUNT(DISTINCT archivo) AS num_archivos_repetidos FROM palabras GROUP BY palabra HAVING COUNT(*) > 1;";
             var comando = new MySqlCommand(Query, conexion);
-            comando.ExecuteNonQuery();
-          /*  while (datos.Read())
+            var datos = comando.ExecuteReader();
+            while (datos.Read())
             {
 
-                res += datos.GetString(1);
-            }*/
-
-
-            //return ;
-
-            conexion.Close();
-            //MessageBox.Show("Se inserto");
-
-        }
-        private void separarPalabras(string texto,string archivo) {
-            string[] words = texto.Split(' ');
-            //foreach (string word in words) { 
-            //insert(word, archivo);
-           // }
+                res += datos.GetString(0) + " = " + datos.GetInt16(1) +","+ datos.GetInt16(1)+1+ "\r\n";
+            }
+            return res;
         }
 
-        private string mostrarPalabras()
+        private string PostinGet()
         {
             string res = "";
             var conexion = new MySqlConnection(connection());
             conexion.Open();
-            string Query = "SELECT * FROM `palabras` ORDER BY palabra ASC;";
+            string Query = "SELECT archivo, palabra, COUNT(*) AS num_repeticiones FROM palabras GROUP BY archivo, palabra ORDER BY archivo, palabra;";
             var comando = new MySqlCommand(Query, conexion);
             var datos = comando.ExecuteReader();
             while (datos.Read())
             {
 
-                res += datos.GetString(1)+"\r\n";
+                res += datos.GetChar(0) + " = " + datos.GetInt16(2) + "\r\n";
             }
             return res;
         }
 
-        private string contarPalabras() {
-            string res = "";
-            var conexion = new MySqlConnection(connection());
-            conexion.Open();
-            string Query = "SELECT palabra, COUNT(*) AS repeticiones FROM palabras GROUP BY palabra HAVING COUNT(*) > 1;";
-            var comando = new MySqlCommand(Query, conexion);
-            var datos = comando.ExecuteReader();
-            while (datos.Read())
-            {
 
-                res += datos.GetString(0) +" = "+ datos.GetInt16(1)+ "\r\n";
-            }
-            return res;
-        }
-        private string contarPalabrasByFile()
-        {
-            string res = "";
-            var conexion = new MySqlConnection(connection());
-            conexion.Open();
-            string Query = "SELECT archivo, palabra, COUNT(*) AS repeticiones FROM palabras GROUP BY archivo, palabra HAVING COUNT(*) > 1;";
-            var comando = new MySqlCommand(Query, conexion);
-            var datos = comando.ExecuteReader();
-            while (datos.Read())
-            {
 
-                res +=  datos.GetString(0) + " Palabras = " + datos.GetString(1) + " Conteo = " + datos.GetInt16(2) + "\r\n";
-            
-            }
-            return res;
-        }
+
+
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
