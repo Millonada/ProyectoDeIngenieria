@@ -41,6 +41,10 @@
             this.label4 = new System.Windows.Forms.Label();
             this.textDelete = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.palabra = new System.Windows.Forms.TextBox();
+            this.buscador = new System.Windows.Forms.Button();
+            this.resultados = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // button1
@@ -161,11 +165,51 @@
             this.label5.TabIndex = 12;
             this.label5.Text = "Tiempo en que tarda en eliminar";
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(12, 440);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(122, 15);
+            this.label6.TabIndex = 13;
+            this.label6.Text = "Buscador de palabras:";
+            // 
+            // palabra
+            // 
+            this.palabra.Location = new System.Drawing.Point(138, 457);
+            this.palabra.Name = "palabra";
+            this.palabra.PlaceholderText = "Buscar..";
+            this.palabra.Size = new System.Drawing.Size(181, 23);
+            this.palabra.TabIndex = 14;
+            // 
+            // buscador
+            // 
+            this.buscador.Location = new System.Drawing.Point(342, 457);
+            this.buscador.Name = "buscador";
+            this.buscador.Size = new System.Drawing.Size(75, 23);
+            this.buscador.TabIndex = 15;
+            this.buscador.Text = "Buscar";
+            this.buscador.UseVisualStyleBackColor = true;
+            this.buscador.Click += new System.EventHandler(this.buscador_Click);
+            // 
+            // resultados
+            // 
+            this.resultados.Location = new System.Drawing.Point(138, 486);
+            this.resultados.Multiline = true;
+            this.resultados.Name = "resultados";
+            this.resultados.PlaceholderText = "Resultados";
+            this.resultados.Size = new System.Drawing.Size(279, 202);
+            this.resultados.TabIndex = 16;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1064, 450);
+            this.ClientSize = new System.Drawing.Size(1064, 710);
+            this.Controls.Add(this.resultados);
+            this.Controls.Add(this.buscador);
+            this.Controls.Add(this.palabra);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.textDelete);
             this.Controls.Add(this.label4);
@@ -203,5 +247,9 @@
         private Label label4;
         private TextBox textDelete;
         private Label label5;
+        private Label label6;
+        private TextBox palabra;
+        private Button buscador;
+        private TextBox resultados;
     }
 }

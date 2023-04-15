@@ -153,7 +153,24 @@ namespace actividad1._1
             return res;
         }
 
+        private void buscador_Click(object sender, EventArgs e)
+        {
+            // aqui se introduce toda la logia para el buscador de palabras
+            string res = "";
+            string buscar = palabra.Text;
+            var conexion = new MySqlConnection(connection());
+            conexion.Open();
+            string Query = "SELECT * FROM palabras where palabra LIKE '%"+buscar+"%';";
+            var comando = new MySqlCommand(Query, conexion);
+            var reader = comando.ExecuteReader();
+            while (reader.Read())
+            {
+                 res += reader.GetInt32("id")+"  "+reader.GetString("palabra")+ "\r\n";
+                // haz algo con el valor encontrado
+            }
 
+            resultados.Text=res;
+        }
 
 
 
@@ -192,5 +209,7 @@ namespace actividad1._1
         {
 
         }
+
+       
     }
 }
